@@ -1,27 +1,38 @@
-/*                         maxsonar_arduino_ros                         */
-//////////////////////////////////////////////////////////////////////////
-//  This script is a modification of the Arduino I2C for a MaxSonar by  //
-//  Carl Myhre.                                                         //
-//                                                                      //
-//  Arduino I2C for a MaxSonar by Carl Myhre is licensed under a        //
-//  Creative Commons Attribution-ShareAlike 4.0 International License.  //
-//  Original Author:  Carl Myhre, 10-02-2014, Revision: 1.0             //
-//  Modifications by:                                                   //
-//                                                                      //
-//  Revision History: 1.0 -- 10-02-2014 -- Created initial code build   //
-//                                                                      //
-//  The original I2C libraries were created by Peter Fleury             //
-//    http://homepage.hispeed.ch/peterfleury/avr-software.html          //
-//                                                                      //
-//  These libraries were adapted by Bernhard Nebel for use on Arduino   //
-//    https://github.com/felias-fogg/SoftI2CMaster                      //
-//                                                                      //
-//  Special Thanks to MaxBotix Inc. for sponsoring this project!        //
-//    http://www.maxbotix.com -- High Performance Ultrasonic Sensors    //
-//                                                                      //
-//  For more information on installing the I2C libraries for Arduino    //
-//    visit http://playground.arduino.cc/Main/SoftwareI2CLibrary        //
-//////////////////////////////////////////////////////////////////////////
+/*                         maxsonar_arduino_ros                          */
+///////////////////////////////////////////////////////////////////////////
+//  This script is a modification of the Arduino I2C for a MaxSonar by   //
+//  Carl Myhre. It reads the range from an I2CXL-MaxSonar-EZ ultrasonic  //
+//  sensor and publishes it to ROS as a sensor_msgs/Range message.       //
+//                                                                       //
+//  Arduino I2C for a MaxSonar by Carl Myhre is licensed under a         //
+//  Creative Commons Attribution-ShareAlike 4.0 International License.   //
+//  Original Author:  Carl Myhre, 10-02-2014, Revision: 1.0              //
+//  Modifications by:                                                    //
+//                                                                       //
+//  The original I2C libraries were created by Peter Fleury              //
+//    http://homepage.hispeed.ch/peterfleury/avr-software.html           //
+//                                                                       //
+//  These libraries were adapted by Bernhard Nebel for use on Arduino    //
+//    https://github.com/felias-fogg/SoftI2CMaster                       //
+//                                                                       //
+//  Special Thanks to MaxBotix Inc. for sponsoring this project!         //
+//    http://www.maxbotix.com -- High Performance Ultrasonic Sensors     //
+//                                                                       //
+//  For more information on installing the I2C libraries for Arduino     //
+//    visit http://playground.arduino.cc/Main/SoftwareI2CLibrary         //
+//                                                                       //
+// THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS   //
+// "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT     //
+// LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS     //
+// FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE        //
+// COPYRIGHT HOLDER BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,      //
+// SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT      //
+// LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, //
+// DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY //
+// THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT   //
+// (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE // 
+// OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.  //
+///////////////////////////////////////////////////////////////////////////
 
 //Hints on installing this code:
 // 1. You will need to install the <SoftI2CMaster.h> library before using this code.
